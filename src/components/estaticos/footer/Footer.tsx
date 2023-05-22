@@ -13,7 +13,7 @@ function Footer () {
                 <Grid alignItems="center" item xs={12}>
                     <Box style={{ backgroundColor: "#EB9486", height: "120px" }}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "#4A001F", fontWeight:"600" }}>Siga-nos nas redes sociais </Typography>
+                            <Typography variant="h5" align="center" gutterBottom style={{ color: "#4A001F", fontWeight:"500" }}>Siga-nos nas redes sociais </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
                             <a href="https://www.facebook.com/generationbrasil" target="_blank">
@@ -27,7 +27,7 @@ function Footer () {
                             </a>
                         </Box>
                     </Box>
-                    <Box style={{ backgroundColor: "#7E7F9A", height: "60px" }}>
+                    <Box style={{ backgroundColor: "#7E7F9A", height: "80px" }}>
                         <Box paddingTop={1}>
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "#660066", fontSize:"16px", fontWeight:"600" }} >© 2023 Copyright:</Typography>
                         </Box>

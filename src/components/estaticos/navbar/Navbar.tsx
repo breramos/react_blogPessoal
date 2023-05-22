@@ -9,7 +9,7 @@ function Navbar() {
     return (
         <>
 
-            <AppBar position="static" style={{backgroundColor: "#272838"}}>
+            <AppBar position="static" style={{backgroundColor: "#564787"}}>
                 <Toolbar variant="dense" style={{display:"flex", justifyContent:"space-between"}}>
                     <Box mx={1} display="block" width="100px" style={{ cursor: "pointer", marginTop: "10px", marginBottom: "10px", justifyContent: "flex-start" }}>
                         <Typography variant="h5" style={{color:"#69f0ae", fontWeight:"600"}}>
@@ -24,20 +24,23 @@ function Navbar() {
                                 </Typography>
                             </Box>
                         </Link>
-                        <Box mx={9} style={{ cursor: "pointer"}}>
-                            <Typography variant="h6" style={{color:"#e6ac00", fontWeight:"600"}}>
-                                Postagens
-                            </Typography>
-                        </Box>
-                        <Box mx={9} style={{ cursor: "pointer"}}>
-                            <Typography variant="h6" style={{color:"#e6ac00", fontWeight:"600"}}>
-                                Temas
-                            </Typography>
-                        </Box>
-
+                        <Link to='/postagens' className="text-decorator-none">
+                            <Box mx={9} style={{ cursor: "pointer"}}>
+                                <Typography variant="h6" style={{color:"#e6ac00", fontWeight:"600"}}>
+                                    Postagens
+                                </Typography>
+                            </Box>
+                        </Link>
+                        <Link to='/temas' className="text-decorator-none">
+                            <Box mx={9} style={{ cursor: "pointer"}}>
+                                <Typography variant="h6" style={{color:"#e6ac00", fontWeight:"600"}}>
+                                    Temas
+                                </Typography>
+                            </Box>
+                        </Link>
                         <Box mx={10} style={{ cursor: "pointer"}}>
                             <Typography variant="h6" style={{color:"#e6ac00", fontWeight:"600"}}>
-                                Cadastrar tema
+                                Cadastrar Tema
                             </Typography>
                         </Box>
                         
