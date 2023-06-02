@@ -77,8 +77,8 @@ function Login() {
     return (
         <>
             <Grid container direction='row' justifyContent='center' alignItems='center'>
-                <Grid alignItems='center' xs={6}>
-                    <Box paddingX={24}>
+                <Grid alignItems='center' xs={5}>
+                    <Box paddingX={18}>
                         <form onSubmit={onSubmit}>
                             <Typography className='texto-login' variant='h2' gutterBottom color='textPrimary' component='h2' align='center' style={{color: 'rgba(62, 233, 176, 0.863)', letterSpacing:'2px', fontWeight:'bold', fontStyle:'oblique', fontSize:'4rem'}}>Login</Typography>
                             <TextField value={userLogin.usuario} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
@@ -99,7 +99,7 @@ function Login() {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid xs={6} className='imagem'>
+                <Grid xs={7} className='imagem'>
 
                 </Grid>
             </Grid>
