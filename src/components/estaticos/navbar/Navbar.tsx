@@ -39,7 +39,7 @@ function Navbar() {
     if (token !== '') {
 
         navbarComponent =
-            <AppBar position="static" style={{ backgroundColor: "transparent" }}>
+            <AppBar position="static" style={{ backgroundColor: "rgb(15, 19, 56)" }}>
                 <Toolbar variant="dense" style={{ display: "flex", justifyContent: "space-between" }}>
                     <Box mx={1} display="block" width="100px" style={{ cursor: "pointer", marginTop: "10px", marginBottom: "10px", justifyContent: "flex-start" }}>
                         <Typography variant="h5" style={{ color: "#69f0ae", fontWeight: "600" }}>
