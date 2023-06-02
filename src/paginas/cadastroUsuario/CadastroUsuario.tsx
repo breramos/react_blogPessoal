@@ -4,6 +4,7 @@ import { Box, Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
+import { toast } from 'react-toastify';
 
 
 function CadastroUsuario() {
@@ -55,12 +56,39 @@ function CadastroUsuario() {
         if(confirmarSenha == user.senha && user.senha != ""){
             try{
                 await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-                alert('Usuário cadastrado com sucesso!');
+                toast.success('Usuário cadastrado com sucesso', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }catch(error){
-                alert('Erro ao cadastrar! Dados inválidos');
+                toast.error('Dados inconsistentes! Favor verificar as informações de cadastro', {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
         }else{
-            alert('As senhas cadastradas não correspondem!')
+            toast.error('As senhas digitadas não conferem', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
     }
 
@@ -70,7 +98,7 @@ function CadastroUsuario() {
             <Grid item xs={6} alignItems='center'>
                 <Box paddingX={10}>
                     <form onSubmit={onSubmit}>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
+                        <Typography variant='h3' gutterBottom component='h3' align='center' className='textos2'>Cadastro</Typography>
                         <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome *' variant='outlined' name='nome' margin='normal' fullWidth />
                         <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='Foto *' variant='outlined' name='foto' margin='normal' fullWidth />
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuário *' variant='outlined' name='usuario' margin='normal'fullWidth />
@@ -78,11 +106,11 @@ function CadastroUsuario() {
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha *' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>
-                                <Button variant='contained' color='secondary' className='btnCancelar'>
+                                <Button variant='contained' className='btnCancelar'>
                                     Cancelar
                                 </Button>
                             </Link>
-                            <Button type='submit' variant='contained' color='primary'>
+                            <Button type='submit' variant='contained' className='btnCadastrar'>
                                     Cadastrar
                             </Button>
                         </Box>

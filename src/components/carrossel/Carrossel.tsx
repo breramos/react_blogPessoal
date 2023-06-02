@@ -32,19 +32,31 @@ function Carrossel() {
             >
 
                 <SwiperSlide>
-                    <img src="https://i.imgur.com/EYLPjQm.jpg" alt="Imagem" />
+                    <img src="https://imgur.com/CuOe4SJ.png" alt="Imagem" />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img src="https://i.imgur.com/zl9uZzx.jpg" alt="Imagem" />
+                    <img src="https://imgur.com/LjWF0Qy.png" alt="Imagem" />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img src="https://i.imgur.com/153khxC.png" alt="Imagem" />
+                    <img src="https://imgur.com/vFi0n0R.png" alt="Imagem" />
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img src="https://i.imgur.com/RxL2yjz.jpg" alt="Imagem" />
+                    <img src="https://imgur.com/K4nGddE.png" alt="Imagem" />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <img src="https://imgur.com/455E21P.png" alt="Imagem" />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <img src="https://imgur.com/iR6783G.png" alt="Imagem" />
+                </SwiperSlide>
+
+                <SwiperSlide>
+                    <img src="https://imgur.com/VppB18E.png" alt="Imagem" />
                 </SwiperSlide>
 
             </Swiper>

@@ -6,13 +6,19 @@ import useLocalStorage from 'react-use-localstorage';
 import { buscaId, deleteId, post, put } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 import './DeletarTema.css';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/token/Reducer';
+import { toast } from 'react-toastify';
 
 
 function DeletarTema() {
 
   let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token');
+    //const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<UserState, UserState["tokens"]>(
+      (state) => state.tokens
+    )
     const [tema, setTema] = useState<Tema>({
         id: 0,
         descricao: ''
@@ -20,7 +26,16 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado!")
+          toast.error('Você precisa estar logado para continuar!', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+          });
             navigate("/login")
     
         }
@@ -47,7 +62,16 @@ function DeletarTema() {
                 'Authorization': token
               }
             });
-            alert("Tema deletado com sucesso!");
+            toast.success('Tema deletado com sucesso', {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: "colored",
+              progress: undefined,
+          });
           }
         
           function nao() {

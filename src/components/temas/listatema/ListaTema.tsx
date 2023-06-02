@@ -4,18 +4,33 @@ import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/
 import {Box} from '@mui/material';
 import Tema from '../../../models/Tema';
 import './ListaTema.css';
-import useLocalStorage from 'react-use-localstorage';
 import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/token/Reducer';
+import { toast } from 'react-toastify';
+//import useLocalStorage from 'react-use-localstorage';
 
 function ListaTema() {
   const [temas, setTemas] = useState<Tema[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  //const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<UserState, UserState["tokens"]>(
+    (state) => state.tokens
+  )
   let navigate = useNavigate();
 
   useEffect(()=>{
     if(token == ''){
-      alert("Você precisa estar logado para acessar os temas!")
+      toast.error('Você precisa estar logado para continuar!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
       navigate("/login")
     }
   }, [token])
@@ -54,14 +69,14 @@ function ListaTema() {
               <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                    atualizar
+                    Atualizar
                   </Button>
                 </Box>
               </Link>
               <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
                   <Button variant="contained" size='small' color="secondary">
-                    deletar
+                    Deletar
                   </Button>
                 </Box>
               </Link>
